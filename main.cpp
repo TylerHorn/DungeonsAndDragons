@@ -3,18 +3,19 @@
 #include"Race.h"
 #include"SetStats.h"
 #include"Equipment.h"
+#include "Menu.h"
 using namespace std;
 
 int main() {
-	SetStats stats;
-	stats.diceRoll();
 
-	setWeapon();
+    Menu::displayStart();
+
+    SetStats stats;
+    stats.diceRoll();
+
+    Menu::displayMenu();
 
 
 
-
-
-
-	return 0;
+    return 0;
 }

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Equipment.h
+string
+-
+iostream
+-
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Menu.cpp
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Menu.h
+iostream
+-
+string
+-
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Race.h
+SetStats.h
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/SetStats.h
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/SetStats.h
+string
+-
+random
+-
+
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/main.cpp
+iostream
+-
+string
+-
+Race.h
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Race.h
+SetStats.h
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/SetStats.h
+Equipment.h
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Equipment.h
+Menu.h
+/cygdrive/c/Users/TyHor/CLionProjects/DungeonsAndDragons/Menu.h
+
