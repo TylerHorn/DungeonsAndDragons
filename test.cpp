@@ -9,8 +9,21 @@ int main() {
 	SetStats stats;
 	stats.diceRoll();
 
+	// test equipment
+	Equipment equip;
 
+	equip.setWeapon();
+	equip.setArmor();
+	cout << equip.getWeapon() << endl;
+	cout << equip.getArmor() << endl;
+	
+	equip.addWeapon("Dagger");
+	equip.addArmor("Full Plate");
 
+	equip.setWeapon();
+	equip.setArmor();
+	cout << equip.getWeapon() << endl;
+	cout << equip.getArmor() << endl;
 
 
 
