@@ -30,3 +30,11 @@ As for the goals of the group, we will first work on the Menu that will be done 
 - Update options
 - Dice
 - Display / Load txt file
+
+--Sections--
+1. Character description
+2. Stats
+3. Personal Traits
+4. Features
+5. Equipment
+6. Other Proficiencies
