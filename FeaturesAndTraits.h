@@ -20,4 +20,12 @@ void FeaturesAndTraits::setFeatures() {
 	cin >> newFeature;
 	features.push_back(newFeature);
 }
+
+void FeaturesAndTraits::displayFeatures() {
+	cout << "Features and Traits: \n";
+	for (int i = 0; i < features.size(); i++)
+	{
+		cout << features[i] << endl;
+	}
+}
 #endif
