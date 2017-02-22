@@ -1,1 +1,0 @@
-/usr/bin/c++.exe  -g  -Wl,--enable-auto-import CMakeFiles/DungeonsAndDragons.dir/main.cpp.o CMakeFiles/DungeonsAndDragons.dir/Menu.cpp.o  -o DungeonsAndDragons.exe -Wl,--out-implib,libDungeonsAndDragons.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
