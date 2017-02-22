@@ -6,25 +6,29 @@
 using namespace std;
 
 int main() {
-	SetStats stats;
-	stats.diceRoll();
+	//SetStats stats;
+	//stats.diceRoll();
 
 	// test equipment
 	Equipment equip;
 
 	equip.setWeapon();
 	equip.setArmor();
-	cout << equip.getWeapon() << endl;
-	cout << equip.getArmor() << endl;
+	//cout << equip.getWeapon() << endl;
+	//cout << equip.getArmor() << endl;
 	
-	equip.addWeapon("Dagger");
-	equip.addArmor("Full Plate");
+	//equip.addWeapon("Dagger");
+	//equip.addArmor("Full Plate");
 
 	equip.setWeapon();
 	equip.setArmor();
-	cout << equip.getWeapon() << endl;
-	cout << equip.getArmor() << endl;
+	equip.setItem();
+	//cout << equip.getWeapon() << endl;
+	//cout << equip.getArmor() << endl;
 
+	//equip.addItem("Potion");
+
+	equip.toString();
 
 
 	return 0;

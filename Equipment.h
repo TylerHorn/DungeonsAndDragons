@@ -9,76 +9,133 @@ using namespace std;
 //then have another method that takes that input, and sets it.
 class Equipment {
 private:
-	string weapon;
-	string armor;
-	vector<string> weaponName = {"Knife", "Broken Sword", "Boomerang", "Throwing Star" };
-	vector<string> armorName = {"Leather", "Chainmail", "Banded Mail"};
+	vector<string> weapons;
+	vector<string> armors;
+	vector<string> items;
+	string weaponList[4] = { "Knife", "Broken Sword", "Boomerang", "Throwing Star" };
+	string armorList[3] = { "Leather", "Chainmail", "Banded Mail" };
 public:
 	void setWeapon();
 	void setArmor();
+	void setItem();
 	string getWeapon()const;
 	string getArmor()const;
+	string getItem()const;
 	void addWeapon(string);
 	void addArmor(string);
+	void addItem(string);
 	void displayWeapon();
 	void displayArmor();
+	void displayItems();
+	void toString();
 };
-/*
-void Equipment::setWeapon() {
-	cout << "please enter your weapon: ";
-	cin >> weapon;
-}
-void Equipment::setArmor() {
-	cout << "please enter your armor: ";
-	cin >> armor;
-}
-*/
+
+// Only returns the first in the vector
 string Equipment::getWeapon()const {
-	return weapon;
+	return weapons.front();
 }
 string Equipment::getArmor()const {
-	return armor;
+	return armors.front();
 }
+string Equipment::getItem()const {
+	return items.front();
+}
+
 // Displays a list of weapons and prompts the user to choose by number
 void Equipment::setWeapon() {
 	int weaponNo;
-	cout << "Please choose the corresponding number for you weapon: \n";
-	displayWeapon();
+	cout << "Please choose the corresponding number for you weapon, or enter 99 to manually add a weapon: \n";
+	cout << "List of all weapons: \n";
+	for (int i = 0; i < 4; i++)
+	{
+		cout << i << ": " << weaponList[i] << endl;
+	}
 	cin >> weaponNo;
-	weapon = weaponName[weaponNo];
+	if (weaponNo == 99)
+	{
+		string newWeapon;
+		cout << "What is the name of your weapon? \n";
+		cin >> newWeapon;
+		addWeapon(newWeapon);
+	}
+	else
+	{
+		addWeapon(weaponList[weaponNo]);
+	}
+
 }
 // Displays a list of armors and prompts the user to choose by number
 void Equipment::setArmor() {
 	int armorNo;
-	cout << "Please choose the corresponding number for you armor: \n";
-	displayArmor();
+	cout << "Please choose the corresponding number for you armor, or enter 99 to manually add an armor: \n";
+	cout << "List of armors: \n";
+	for (int i = 0; i < 3; i++)
+	{
+		cout << i << ": " << armorList[i] << endl;
+	}
 	cin >> armorNo;
-	armor = armorName[armorNo];
+	if (armorNo == 99)
+	{
+		string newArmor;
+		cout << "What is the name of your armor? \n";
+		cin >> newArmor;
+		addArmor(newArmor);
+	}
+	else
+	{
+		addArmor(armorList[armorNo]);
+	}
 }
-// Adds a weapon to the list
+// Prompts the user to add an item
+void Equipment::setItem() {
+	string newItem;
+	cout << "What is the name of your item? \n";
+	cin >> newItem;
+	addItem(newItem);
+}
+
+// Adds a weapon
 void Equipment::addWeapon(string wp) {
-	weaponName.push_back(wp);
+	weapons.push_back(wp);
 }
-// Adds an armor to the list
+// Adds an armor
 void Equipment::addArmor(string ar) {
-	armorName.push_back(ar);
+	armors.push_back(ar);
+}
+// Adds an item
+void Equipment::addItem(string it) {
+	items.push_back(it);
 }
 
 // Displays a list of weapons
 void Equipment::displayWeapon() {
-	cout << "List of all weapons: \n";
-	for (int i = 0; i < weaponName.size(); i++)
+	cout << "Weapons: \n";
+	for (int i = 0; i < weapons.size(); i++)
 	{
-		cout << i << ": " << weaponName[i] << endl;
+		cout << weapons[i] << endl;
 	}
 }
 // Displays a list of armors
 void Equipment::displayArmor() {
-	cout << "List of all armors: \n";
-	for (int i = 0; i < armorName.size(); i++)
+	cout << "Armor: \n";
+	for (int i = 0; i < armors.size(); i++)
 	{
-		cout << i << ": " << armorName[i] << endl;
+		cout << armors[i] << endl;
 	}
 }
-	
+// Displays a list of items
+void Equipment::displayItems() {
+	cout << "Inventory: \n";
+	for (int i = 0; i < items.size(); i++)
+	{
+		cout << items[i] << endl;
+	}
+}
+
+// Displays all equipment
+void Equipment::toString() {
+	displayWeapon();
+	displayArmor();
+	displayItems();
+}
 #endif // !EQUIPMENT_H
