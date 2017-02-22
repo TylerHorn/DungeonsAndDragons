@@ -9,6 +9,7 @@ using namespace std;
 //then have another method that takes that input, and sets it.
 class Equipment {
 private:
+
 	vector<string> weapons;
 	vector<string> armors;
 	vector<string> items;
@@ -138,4 +139,28 @@ void Equipment::toString() {
 	displayArmor();
 	displayItems();
 }
+	string weapon;
+	string armor;
+public:
+	void setWeapon();
+	void setArmor();
+	string getWeapon()const;
+	string getArmor()const;
+};
+void Equipment::setWeapon() {
+	cout << "please enter your weapon: ";
+	cin >> weapon;
+}
+void Equipment::setArmor() {
+	cout << "please enter your armor: ";
+	cin >> armor;
+}
+string Equipment::getWeapon()const {
+	return weapon;
+}
+string Equipment::getArmor()const {
+	return armor;
+}
+	
+
 #endif // !EQUIPMENT_H

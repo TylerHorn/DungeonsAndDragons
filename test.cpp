@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+
 	//SetStats stats;
 	//stats.diceRoll();
 
@@ -29,6 +30,13 @@ int main() {
 	//equip.addItem("Potion");
 
 	equip.toString();
+
+	SetStats stats;
+	stats.diceRoll();
+
+
+
+
 
 
 	return 0;
