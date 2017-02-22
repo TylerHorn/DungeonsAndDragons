@@ -34,6 +34,8 @@ int main() {
 	SetStats stats;
 	stats.diceRoll();
 
+	setWeapon();
+
 
 
 
