@@ -12,7 +12,8 @@ FeaturesAndTraits::FeaturesAndTraits()
 void FeaturesAndTraits::setFeatures() {
 	std::string newFeature;
 	std::cout << "Enter the feature or trait: \n";
-	cin >> newFeature;
+	cin.ignore();
+	getline(cin, newFeature);
 	features.push_back(newFeature);
 }
 

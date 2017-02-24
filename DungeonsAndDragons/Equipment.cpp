@@ -35,7 +35,8 @@ void Equipment::setWeapon() {
 	{
 		string newWeapon;
 		cout << "What is the name of your weapon? \n";
-		cin >> newWeapon;
+		cin.ignore();
+		getline(cin, newWeapon);
 		addWeapon(newWeapon);
 	}
 	else
@@ -58,7 +59,8 @@ void Equipment::setArmor() {
 	{
 		string newArmor;
 		cout << "What is the name of your armor? \n";
-		cin >> newArmor;
+		cin.ignore();
+		getline(cin, newArmor);
 		addArmor(newArmor);
 	}
 	else
@@ -70,7 +72,8 @@ void Equipment::setArmor() {
 void Equipment::setItem() {
 	string newItem;
 	cout << "What is the name of your item? \n";
-	cin >> newItem;
+	cin.ignore();
+	getline(cin, newItem);
 	addItem(newItem);
 }
 
