@@ -24,13 +24,25 @@ string Equipment::getItem()const {
 // Displays a list of weapons and prompts the user to choose by number
 void Equipment::setWeapon() {
 	int weaponNo;
-	cout << "Please choose the corresponding number for you weapon, or enter 99 to manually add a weapon: \n";
-	cout << "List of all weapons: \n";
-	for (int i = 0; i < 4; i++)
+	bool flag = true;
+	while (flag)
 	{
-		cout << i << ": " << weaponList[i] << endl;
+		cout << "Please choose the corresponding number for you weapon, or enter 99 to manually add a weapon: \n";
+		cout << "List of all weapons: \n";
+		for (int i = 0; i < 4; i++)
+		{
+			cout << i << ": " << weaponList[i] << endl;
+		}
+		if (cin >> weaponNo)
+		{
+			flag = false;
+		}
+		else
+		{
+			cout << "Invalid input\n";
+		}
 	}
-	cin >> weaponNo;
+	
 	if (weaponNo == 99)
 	{
 		string newWeapon;
@@ -48,13 +60,26 @@ void Equipment::setWeapon() {
 // Displays a list of armors and prompts the user to choose by number
 void Equipment::setArmor() {
 	int armorNo;
-	cout << "Please choose the corresponding number for you armor, or enter 99 to manually add an armor: \n";
-	cout << "List of armors: \n";
-	for (int i = 0; i < 3; i++)
+	bool flag = true;
+	
+	while (flag)
 	{
-		cout << i << ": " << armorList[i] << endl;
+		cout << "Please choose the corresponding number for you armor, or enter 99 to manually add an armor: \n";
+		cout << "List of armors: \n";
+		for (int i = 0; i < 3; i++)
+		{
+			cout << i << ": " << armorList[i] << endl;
+		}
+		if (cin >> armorNo)
+		{
+			flag = false;
+		}
+		else
+		{
+			cout << "Invalid Input\n";
+		}
 	}
-	cin >> armorNo;
+	
 	if (armorNo == 99)
 	{
 		string newArmor;
