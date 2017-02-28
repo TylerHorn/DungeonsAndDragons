@@ -41,13 +41,12 @@ void Equipment::setWeapon() {
 			{
 			case 1:
 				cout << "Please choose the number of a weapon from the list: \n";
-				int i = 0;
-				for (i; i < 10; i++)
+				for (int i = 0; i < 10; i++)
 				{
 					cout << i << ": " << simpleMelee[i] << endl;
 				}
 				cin >> weaponNo;
-				addWeapon(simpleMelee[i]);
+				addWeapon(simpleMelee[weaponNo]);
 				flag = false;
 				break;
 			case 2:
@@ -57,7 +56,7 @@ void Equipment::setWeapon() {
 					cout << i << ": " << simpleRanged[i] << endl;
 				}
 				cin >> weaponNo;
-				addWeapon(simpleRanged[i]);
+				addWeapon(simpleRanged[weaponNo]);
 				flag = false;
 				break;
 			case 3:
@@ -67,7 +66,7 @@ void Equipment::setWeapon() {
 					cout << i << ": " << martialMelee[i] << endl;
 				}
 				cin >> weaponNo;
-				addWeapon(martialMelee[i]);
+				addWeapon(martialMelee[weaponNo]);
 				flag = false;
 				break;
 			case 4:
@@ -77,7 +76,7 @@ void Equipment::setWeapon() {
 					cout << i << ": " << martialRanged[i] << endl;
 				}
 				cin >> weaponNo;
-				addWeapon(martialRanged[i]);
+				addWeapon(martialRanged[weaponNo]);
 				flag = false;
 				break;
 			case 5:
@@ -117,6 +116,7 @@ void Equipment::setArmor() {
 				cout << i << ": " << lightArmor[i] << endl;
 			}
 			cin >> armorNo;
+			addArmor(lightArmor[armorNo]);
 			flag = false;
 			break;
 		case 2:
@@ -126,19 +126,21 @@ void Equipment::setArmor() {
 				cout << i << ": " << mediumArmor[i] << endl;
 			}
 			cin >> armorNo;
+			addArmor(mediumArmor[armorNo]);
 			flag = false;
 			break;
 		case 3:
 			cout << "Please choose the number of a weapon from the list: \n";
 			for (int i = 0; i < 4; i++)
 			{
-				cout << i << ": " << mediumArmor[i] << endl;
+				cout << i << ": " << heavyArmor[i] << endl;
 			}
 			cin >> armorNo;
+			addArmor(heavyArmor[armorNo]);
 			flag = false;
 			break;
 		case 4:
-			cout << "What is the name of your weapon? \n";
+			cout << "What is the name of your armor? \n";
 			cin.ignore();
 			getline(cin, newArmor);
 			addWeapon(newArmor);
@@ -149,42 +151,6 @@ void Equipment::setArmor() {
 			flag = true;
 		}
 	}
-	
-	
-	
-	/*int armorNo;
-	bool flag = true;
-	
-	while (flag)
-	{
-		cout << "Please choose the corresponding number for you armor, or enter 99 to manually add an armor: \n";
-		cout << "List of armors: \n";
-		for (int i = 0; i < 3; i++)
-		{
-			cout << i << ": " << armorList[i] << endl;
-		}
-		if (cin >> armorNo)
-		{
-			flag = false;
-		}
-		else
-		{
-			cout << "Invalid Input\n";
-		}
-	}
-	
-	if (armorNo == 99)
-	{
-		string newArmor;
-		cout << "What is the name of your armor? \n";
-		cin.ignore();
-		getline(cin, newArmor);
-		addArmor(newArmor);
-	}
-	else
-	{
-		addArmor(armorList[armorNo]);
-	}*/
 }
 // Prompts the user to add an item
 void Equipment::setItem() {
@@ -239,23 +205,6 @@ void Equipment::toString() {
 	displayArmor();
 	displayItems();
 }
-
-
-//void Equipment::setWeapon() {
-//	cout << "please enter your weapon: ";
-//	cin >> weapon;
-//}
-//void Equipment::setArmor() {
-//	cout << "please enter your armor: ";
-//	cin >> armor;
-//}
-//string Equipment::getWeapon()const {
-//	return weapon;
-//}
-//string Equipment::getArmor()const {
-//	return armor;
-//}
-
 
 Equipment::~Equipment()
 {
