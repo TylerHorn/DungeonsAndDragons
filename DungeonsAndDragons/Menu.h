@@ -11,6 +11,7 @@ public:
 
 	static void displayStart();
 	static void displayMenu();
-	static void diplayStatsMenu();
+	static void displayStatsMenu();
+	static void displayCharacterInfo();
 };
 

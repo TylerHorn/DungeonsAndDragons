@@ -9,38 +9,54 @@
 #include "Equipment.h"
 #include "FeaturesAndTraits.h"
 #include "SetStats.h"
+#include "CharacterInfo.h"
+#include <iomanip>
 using namespace std;
 
-void createCharacter();
 
-Personality prsnlty;
+void createCharacter();
+void updateStats();
+void displayCharacter();
+
+static Personality prsnlty;
 Equipment eqpt;
 FeaturesAndTraits ftrs;
+static CharacterInfo character;
 
 int main()
 {
-	
-
+	system("mode 650");
 
 	Menu::displayStart();
 	cin.ignore();
 
-	int option;
-	Menu::displayMenu();
-	cin >> option;
 
-	switch (option) {
-	case 1:
-		createCharacter();
-		break;
-	case 2:
+	bool flag = false;
+	while (flag != true)
+	{
+		int option;
+		Menu::displayMenu();
+	
+		cin >> option;
 
-		break;
-	case 3:
-
-		break;
+		switch (option) {
+		case 1:
+			createCharacter();
+			break;
+		case 2:
+			updateStats();
+			break;
+		case 3:
+			displayCharacter();
+			break;
+		case 4:
+			flag = true;
+			break;
+		default: 
+			cout << "Please choose a valid menu option." << endl;
+			break;
+		}
 	}
-
 	
 
 
@@ -49,32 +65,33 @@ int main()
 }
 
 void createCharacter() {
+	character.setPlayerName();
+	character.setCharacterName();
+	character.setCharacterClass();
+	character.setAlignment();
+	character.setBackground();
+	character.setLevel();
+	character.setExpPoints();
+
+
 	cout << "|||||||||||||||||||||||||||||||||" << endl;
 	cout << "||     Personalitly Traits     ||" << endl;
 	cout << "|||||||||||||||||||||||||||||||||" << endl;
 
 	prsnlty.setBonds();
-	cout << "------------------------------------" << endl;
+
 	prsnlty.setFlairs();
 	cout <<  endl;
 
-	cout << "|||||||||||||||||||||||||||||||||" << endl;
-	cout << "||           Equipment         ||" << endl;
-	cout << "|||||||||||||||||||||||||||||||||" << endl;
-
 	eqpt.setWeapon();
-	cout << "------------------------------------" << endl;
+
 	eqpt.setArmor();
-	cout << "------------------------------------" << endl;
+
 	eqpt.setItem();
 	cout << endl;
 
-	cout << "|||||||||||||||||||||||||||||||||" << endl;
-	cout << "||           Features          ||" << endl;
-	cout << "|||||||||||||||||||||||||||||||||" << endl;
-
 	ftrs.setFeatures();
-	cout << "------------------------------------" << endl;
+
 
 	cout << "|||||||||||||||||||||||||||||||||" << endl;
 	cout << "||             Stats           ||" << endl;
@@ -85,4 +102,33 @@ void createCharacter() {
 	system("pause");
 
 
+}
+
+void updateStats()
+{
+	int choice;
+	Menu::displayStatsMenu();
+	cin >> choice;
+
+	switch (choice)
+	{
+	case 1:
+		character.setExpPoints();
+		break;
+	case 2:
+		character.setLevel();
+		break;
+	case 3:
+		
+		break;
+	}
+}
+
+void displayCharacter()
+{
+	Menu::displayCharacterInfo();
+	character.characterInfoToString();
+
+
+	system("pause");
 }

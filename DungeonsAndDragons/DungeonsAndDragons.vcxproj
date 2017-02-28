@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterInfo.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="FeaturesAndTraits.h" />
     <ClInclude Include="Menu.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CharacterInfo.cpp" />
     <ClCompile Include="DungeonsAndDragons.cpp" />
     <ClCompile Include="Equipment.cpp" />
     <ClCompile Include="FeaturesAndTraits.cpp" />

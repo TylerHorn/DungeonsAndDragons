@@ -10,8 +10,16 @@ FeaturesAndTraits::FeaturesAndTraits()
 
 
 void FeaturesAndTraits::setFeatures() {
-	std::string newFeature;
-	std::cout << "Enter the feature or trait: \n";
+	string newFeature;
+
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||           Features          ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
+
+	cout << "Enter the feature or trait: \n";
 	cin >> newFeature;
 	features.push_back(newFeature);
 }

@@ -24,6 +24,14 @@ string Equipment::getItem()const {
 // Displays a list of weapons and prompts the user to choose by number
 void Equipment::setWeapon() {
 	int weaponNo;
+
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||            Weapon           ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
+
 	cout << "Please choose the corresponding number for you weapon, or enter 99 to manually add a weapon: \n";
 	cout << "List of all weapons: \n";
 	for (int i = 0; i < 4; i++)
@@ -47,6 +55,13 @@ void Equipment::setWeapon() {
 // Displays a list of armors and prompts the user to choose by number
 void Equipment::setArmor() {
 	int armorNo;
+
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||            Armor            ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
 	cout << "Please choose the corresponding number for you armor, or enter 99 to manually add an armor: \n";
 	cout << "List of armors: \n";
 	for (int i = 0; i < 3; i++)
@@ -69,6 +84,14 @@ void Equipment::setArmor() {
 // Prompts the user to add an item
 void Equipment::setItem() {
 	string newItem;
+
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||             Item            ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
+
 	cout << "What is the name of your item? \n";
 	cin >> newItem;
 	addItem(newItem);

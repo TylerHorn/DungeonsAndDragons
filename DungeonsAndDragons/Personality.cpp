@@ -18,17 +18,30 @@ string Personality::getBonds()const {
 string Personality::getFlairs()const {
 	return flairs;
 }
-// Displays a list of weapons and prompts the user to choose by number
-//void Personality::setIdeals() {
-//	int idealsNo;
-//	cout << "Please choose the corresponding number for your ideal: \n";
-//	displayIdeals();
-//	cin >> idealsNo;
-//	ideals = idealName[idealsNo];
-//}
+ // Displays a list of weapons and prompts the user to choose by number
+void Personality::setIdeals() {
+	int idealsNo;
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||            Ideals           ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
+
+	cout << "Please choose the corresponding number for your ideal: \n";
+	displayIdeals();
+	cin >> idealsNo;
+	ideals = idealName[idealsNo];
+}
 // Displays a list of armors and prompts the user to choose by number
 void Personality::setBonds() {
 	int bondsNo;
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||            Bonds            ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
 	cout << "Please choose the corresponding number for your bond: \n";
 	displayBonds();
 	cin >> bondsNo;
@@ -36,6 +49,12 @@ void Personality::setBonds() {
 }
 void Personality::setFlairs() {
 	int flairsNo;
+	system("cls");
+
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << "||            Flairs           ||" << endl;
+	cout << "|||||||||||||||||||||||||||||||||" << endl;
+	cout << endl;
 	cout << "Please choose the corresponding number for your flair: \n";
 	displayFlairs();
 	cin >> flairsNo;
