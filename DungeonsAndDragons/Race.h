@@ -45,6 +45,8 @@ string setRace::getName() {
 	cin >> name;
 	return name;
 }
+//all of the different races will be set here. For some of the inputs like height and weight I didn't do a check
+//this is because a player really can make their character whatever size they want, it's up to the dm to give the final okay
 void setRace::human(int stats[]) {
 	for (int i = 0; i < 6; i++) {
 		stats[i] += 1;
@@ -70,7 +72,6 @@ void setRace::human(int stats[]) {
 	cout << "Please enter the weight: ";
 	cin >> weight;
 	language.push_back("Common");
-	//need to get other language.
 	vision = "Normal";
 	string langArray[7] = { "Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc" };
 	cout << "Please pick one other language" << endl;
@@ -414,6 +415,10 @@ void setRace::tiefling(int &cha, int &intel) {
 void setRace::printAllStats() {
 	cout <<"Name: " <<name<<", Race: "<<race<<", Alignment: "<<alignment<<", Speed: "<<speed<<endl;
 	cout << "Age: " << age << ", Height: " << height << ", Weight: " << weight << ", Race Size: "<<raceSize<<", Vision: "<<vision<<endl;
+	int temp = language.size();
+	cout << "Language: ";
+	for (int i = 0; i < temp; i++)
+		cout << language[i] << " ";
 }
 void setRace::printRaceTraits() {
 	cout << traits << endl;

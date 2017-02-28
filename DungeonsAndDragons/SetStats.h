@@ -40,7 +40,6 @@ public:
 	int getCharisma();
 	void setCharisma(int);
 	void printAllStats();
-	void getModStats();
 	int getModStr(int);
 	int getModDex(int);
 	int getModCon(int);
@@ -51,9 +50,11 @@ public:
 	void SetStats::setName(string na) {
 		name = na;
 	}
+	//this method is used to set all of the stats
 	void SetStats::setAllStats(int stat[]) {
 		string stringStats[6] = { "strength: ","dexterity: ","constitution: ","intelligence: ","wisdom: ","charisma: " };
 		int statsArray[6];
+		//the stat pool is added to a vector, after the player picks a stat from that pool it is then deleted, so they can no longer pick it.
 		vector<int> tempStatsArray;
 		for (int i = 0; i < 6; i++) {
 			tempStatsArray.push_back(stat[i]);
@@ -87,6 +88,7 @@ public:
 		wisdom = statsArray[4];
 		charisma = statsArray[5];
 	}
+	//this method is used if the player just wants to manually enter their stats
 	void SetStats::setAllStats(int str, int dex, int con, int intel, int wis, int cha) {
 		strength = str;
 		dexterity = dex;

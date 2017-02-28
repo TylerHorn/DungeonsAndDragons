@@ -49,6 +49,8 @@ void characterClass::barbarian(int con) {
 	skills = {"Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"};
 	int skillSize = skills.size();
 	int skillPick;
+	//for picking skills, they're added to a vector, after one skill is picked, that skill is then deleted from the vector so it can't be added again.
+	//This same process is done for all of the character classes
 	cout << "Choose your first skill" << endl;
 	for (int i = 0; i < skillSize; i++) {
 		cout << i+1 << ")" << skills[i] << " ";
@@ -592,6 +594,8 @@ void characterClass::printProf() {
 	cout << endl;
 	cout << "Tools: " << tools << endl;
 }
+//all of the skills are put into an array, with another array given the mods for those skills
+//the a loop is used to see if the character is proficient in any of those skills. if they are then they get the prof bonus added on
 void characterClass::printSkills(int &strMod, int &dexMod, int &conMod, int &intelMod, int &wisMod, int &chaMod) {
 	int strSkill, dexSkill, conSkill, IntelSkill, wisSkill, chaSkill;
 	int tempSkillNumArray[18] = {dexMod, wisMod,intelMod,strMod,chaMod,intelMod,wisMod,chaMod,intelMod,wisMod,intelMod,wisMod,chaMod,chaMod,intelMod,dexMod,dexMod,wisMod};
