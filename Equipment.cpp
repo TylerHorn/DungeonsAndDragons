@@ -27,39 +27,132 @@ void Equipment::setWeapon() {
 	bool flag = true;
 	while (flag)
 	{
-		cout << "Please choose the corresponding number for you weapon, or enter 99 to manually add a weapon: \n";
-		cout << "List of all weapons: \n";
-		for (int i = 0; i < 4; i++)
-		{
-			cout << i << ": " << weaponList[i] << endl;
-		}
-		if (cin >> weaponNo)
-		{
-			flag = false;
-		}
-		else
-		{
-			cout << "Invalid input\n";
-		}
-	}
-	
-	if (weaponNo == 99)
-	{
-		string newWeapon;
-		cout << "What is the name of your weapon? \n";
-		cin.ignore();
-		getline(cin, newWeapon);
-		addWeapon(newWeapon);
-	}
-	else
-	{
-		addWeapon(weaponList[weaponNo]);
-	}
+		int menu;
+		cout	<< "Please choose a category of weapons, or to enter your own weapon: \n"
+				<< "1) Simple Melee\n"
+				<< "2) Simple Ranged\n"
+				<< "3) Martial Melee\n"
+				<< "4) Martial Ranged\n"
+				<< "5) Enter your own\n";
+		cin >> menu;
 
+		string newWeapon;
+			switch (menu)
+			{
+			case 1:
+				cout << "Please choose the number of a weapon from the list: \n";
+				int i = 0;
+				for (i; i < 10; i++)
+				{
+					cout << i << ": " << simpleMelee[i] << endl;
+				}
+				cin >> weaponNo;
+				addWeapon(simpleMelee[i]);
+				flag = false;
+				break;
+			case 2:
+				cout << "Please choose the number of a weapon from the list: \n";
+				for (int i = 0; i < 4; i++)
+				{
+					cout << i << ": " << simpleRanged[i] << endl;
+				}
+				cin >> weaponNo;
+				addWeapon(simpleRanged[i]);
+				flag = false;
+				break;
+			case 3:
+				cout << "Please choose the number of a weapon from the list: \n";
+				for (int i = 0; i < 18; i++)
+				{
+					cout << i << ": " << martialMelee[i] << endl;
+				}
+				cin >> weaponNo;
+				addWeapon(martialMelee[i]);
+				flag = false;
+				break;
+			case 4:
+				cout << "Please choose the number of a weapon from the list: \n";
+				for (int i = 0; i < 5; i++)
+				{
+					cout << i << ": " << martialRanged[i] << endl;
+				}
+				cin >> weaponNo;
+				addWeapon(martialRanged[i]);
+				flag = false;
+				break;
+			case 5:
+				cout << "What is the name of your weapon? \n";
+				cin.ignore();
+				getline(cin, newWeapon);
+				addWeapon(newWeapon);
+				flag = false;
+				break;
+			default:
+				cout << "Invalid input\n";
+				flag = true;
+			}
+		}
 }
 // Displays a list of armors and prompts the user to choose by number
 void Equipment::setArmor() {
 	int armorNo;
+	bool flag = true;
+	while (flag)
+	{
+		int menu;
+		cout	<< "Please choose a category of armor, or to enter your own armor: \n"
+				<< "1) Light Armor\n"
+				<< "2) Medium Armor\n"
+				<< "3) Heavy Armor\n"
+				<< "4) Enter your own\n";
+		cin >> menu;
+
+		string newArmor;
+		switch (menu)
+		{
+		case 1:
+			cout << "Please choose the number of a armor from the list: \n";
+			for (int i = 0; i < 3; i++)
+			{
+				cout << i << ": " << lightArmor[i] << endl;
+			}
+			cin >> armorNo;
+			flag = false;
+			break;
+		case 2:
+			cout << "Please choose the number of a weapon from the list: \n";
+			for (int i = 0; i < 5; i++)
+			{
+				cout << i << ": " << mediumArmor[i] << endl;
+			}
+			cin >> armorNo;
+			flag = false;
+			break;
+		case 3:
+			cout << "Please choose the number of a weapon from the list: \n";
+			for (int i = 0; i < 4; i++)
+			{
+				cout << i << ": " << mediumArmor[i] << endl;
+			}
+			cin >> armorNo;
+			flag = false;
+			break;
+		case 4:
+			cout << "What is the name of your weapon? \n";
+			cin.ignore();
+			getline(cin, newArmor);
+			addWeapon(newArmor);
+			flag = false;
+			break;
+		default:
+			cout << "Invalid input\n";
+			flag = true;
+		}
+	}
+	
+	
+	
+	/*int armorNo;
 	bool flag = true;
 	
 	while (flag)
@@ -91,7 +184,7 @@ void Equipment::setArmor() {
 	else
 	{
 		addArmor(armorList[armorNo]);
-	}
+	}*/
 }
 // Prompts the user to add an item
 void Equipment::setItem() {
