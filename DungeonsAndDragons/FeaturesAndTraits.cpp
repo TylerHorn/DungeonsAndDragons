@@ -10,6 +10,7 @@ FeaturesAndTraits::FeaturesAndTraits()
 
 
 void FeaturesAndTraits::setFeatures() {
+
 	string newFeature;
 
 	system("cls");
@@ -20,7 +21,10 @@ void FeaturesAndTraits::setFeatures() {
 	cout << endl;
 
 	cout << "Enter the feature or trait: \n";
-	cin >> newFeature;
+
+	cin.ignore();
+	getline(cin, newFeature);
+
 	features.push_back(newFeature);
 }
 

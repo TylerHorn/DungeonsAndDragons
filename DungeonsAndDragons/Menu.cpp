@@ -2,13 +2,19 @@
 #include "Menu.h"
 #include "CharacterInfo.h"
 #include <stdlib.h>
+using namespace std;
+   /////////////////////////////
+  //   Author: Tylor Horn    //
+ //		tehorn@dmacc.edu    //
+/////////////////////////////
 
 
+// Default constructor
 Menu::Menu()
 {
 }
 
-
+// Displays main menu with game options
 void Menu::displayMenu() {
 	system("cls");
 
@@ -36,6 +42,7 @@ void Menu::displayMenu() {
 
 }
 
+// Displays the start screen and prompts for any key to start
 void Menu::displayStart() {
 	cout << endl;
 	cout << endl;
@@ -55,6 +62,7 @@ void Menu::displayStart() {
 	
 }
 
+// Displays menu for "Update stats" option
 void Menu::displayStatsMenu() {
 	system("cls");
 
@@ -72,13 +80,13 @@ void Menu::displayStatsMenu() {
 	cout << "                                                           ===================================================================================" << endl;
 	cout << "                                                                                           1) Experience Points" << endl;
 	cout << "                                                                                           2) Level" << endl;
-	cout << "                                                                                           3) Skills" << endl;
 	cout << endl;
 	cout << endl;
 	cout << endl;
 
 }
 
+// Displays Character info header
 void Menu::displayCharacterInfo()
 {
 	system("cls");
@@ -101,7 +109,7 @@ void Menu::displayCharacterInfo()
 	
 }
 
-
+// Default destructor
 Menu::~Menu()
 {
 }

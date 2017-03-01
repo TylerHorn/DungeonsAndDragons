@@ -23,14 +23,11 @@ public:
 
 	void setCharacterName();
 	string getCharacterName();
-	void setCharacterClass();
 	string getCharacterClass();
 	void setLevel();
 	int getLevel();
 	void setBackground();
 	string getBackground();
-	void setRace();
-	string getRace();
 	void setAlignment();
 	string getAlignment();
 	void setExpPoints();

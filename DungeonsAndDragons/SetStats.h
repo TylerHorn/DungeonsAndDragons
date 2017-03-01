@@ -1,37 +1,52 @@
 #pragma once
-#include <string>
-
+#ifndef SETSTATS_H
+#define SETSTATS_H
+#include<string>
+#include<random>
+#include<iostream>
+#include<vector>
 using namespace std;
-
-class SetStats
-{
+//this is where the stats are going to be set.
+class SetStats {
 private:
-	string name;
 	int strength;
 	int dexterity;
 	int constitution;
 	int intelligence;
 	int wisdom;
 	int charisma;
+	int modStr;
+	int modDex;
+	int modCon;
+	int modIntel;
+	int modWis;
+	int modCha;
 public:
 	SetStats();
-	~SetStats();
-
-	void setName(string);
+	void setAllStats(int[]);
 	void setAllStats(int, int, int, int, int, int);
-	static void diceRoll();
-	//	void setStrength(int);
-	//	void setDexterity(int);
-	//	void setConstitution(int);
-	//	void setIntelligence(int);
-	//	void setWisdom(int);
-	//	void setCharisma(int);
-	//	string getName()const;
-	//	int getStrength()const;
-	//	int getDexterity()const;
-	//	int getConstitution()const;
-	//	int getIntelligence()const;
-	//	int getWisdom()const;
-	//	int getCharisma()const;
+	void diceRoll(int[]);
+	int getStrength();
+	void setStrength(int);
+	int getDexterity();
+	void setDexterity(int);
+	int getConstitution();
+	void setConstitution(int);
+	int getIntelligence();
+	void setIntelligence(int);
+	int getWisdom();
+	void setWisdom(int);
+	int getCharisma();
+	void setCharisma(int);
+	void printAllStats();
+	int getModStr(int);
+	int getModDex(int);
+	int getModCon(int);
+	int getModIntel(int);
+	int getModWis(int);
+	int getModCha(int);
+	~SetStats();
 };
 
+
+#endif // !STATS_H
