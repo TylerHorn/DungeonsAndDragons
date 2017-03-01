@@ -143,7 +143,7 @@ void Equipment::setArmor() {
 			cout << "What is the name of your armor? \n";
 			cin.ignore();
 			getline(cin, newArmor);
-			addWeapon(newArmor);
+			addArmor(newArmor);
 			flag = false;
 			break;
 		default:
@@ -155,10 +155,54 @@ void Equipment::setArmor() {
 // Prompts the user to add an item
 void Equipment::setItem() {
 	string newItem;
-	cout << "What is the name of your item? \n";
-	cin.ignore();
-	getline(cin, newItem);
-	addItem(newItem);
+	int menu;
+	bool flag = true;
+
+	while (flag)
+	{
+		cout << "Please choose an item, or to enter your own item: \n"
+			<< "1) Mystic Tools\n"
+			<< "2) Anvil\n"
+			<< "3) Rope Kit\n"
+			<< "4) Harp\n"
+			<< "5) Pocket Knife\n"
+			<< "6) Enter your own\n";
+		cin >> menu;
+
+		switch (menu)
+		{
+		case 1:
+			addItem("Mystic Tools");
+			flag = false;
+			break;
+		case 2:
+			addItem("Anvil");
+			flag = false;
+			break;
+		case 3:
+			addItem("Rope Kit");
+			flag = false;
+			break;
+		case 4:
+			addItem("Harp");
+			flag = false;
+			break;
+		case 5:
+			addItem("Pocket Knife");
+			flag = false;
+			break;
+		case 6:
+			cout << "What is the name of your item? \n";
+			cin.ignore();
+			getline(cin, newItem);
+			addItem(newItem);
+			flag = false;
+			break;
+		default:
+			cout << "Invalid input\n";
+			flag = true;
+		}
+	}
 }
 
 // Adds a weapon
